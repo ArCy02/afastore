@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AFA STORE - Official iPhone Store Way Halim</title>
+    
+    <!-- Meta Tags untuk SEO dan Social Media -->
+    <meta name="description" content="AFA STORE - Pusat penjualan iPhone terpercaya di Way Halim, Bandar Lampung. iPhone original, bergaransi, harga bersaing.">
+    <meta name="keywords" content="iphone, iphone bekas, iphore second, bandar lampung, way halim, jual iphone, apple">
+    <meta name="author" content="AFA STORE">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://afastore.vercel.app/">
+    <meta property="og:title" content="AFA STORE - Official iPhone Store Way Halim">
+    <meta property="og:description" content="Pusat penjualan iPhone terpercaya di Way Halim, Bandar Lampung. iPhone original, bergaransi, harga bersaing.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1591337677887-6c64-4b9f9f5f5b5a?w=1200">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://afastore.vercel.app/">
+    <meta property="twitter:title" content="AFA STORE - Official iPhone Store Way Halim">
+    <meta property="twitter:description" content="Pusat penjualan iPhone terpercaya di Way Halim, Bandar Lampung.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1591337677887-6c64-4b9f9f5f5b5a?w=1200">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+    
+    <!-- Fonts & CSS -->
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-bg: #000000; 
+            --gold: #D4AF37; 
+            --titanium: #1C1C1E;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F9E29C 50%, #B8860B 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background-color: var(--dark-bg); 
+            color: #fff; 
+            margin: 0; 
+            padding-bottom: 90px; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Navigation & UI */
+        .app-bar { 
+            background: rgba(0,0,0,0.8); 
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            padding: 15px 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 0.5px solid #333; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        
+        .bottom-nav { 
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+            background: #121212; 
+            display: flex; 
+            justify-content: space-around; 
+            padding: 12px 0 25px; 
+            border-top: 0.5px solid #333; 
+            z-index: 2000; 
+        }
+        
+        .nav-item { 
+            text-align: center; 
+            color: #8E8E93; 
+            text-decoration: none; 
+            font-size: 0.7rem; 
+            cursor: pointer; 
+            border: none; 
+            background: none; 
+            transition: 0.2s; 
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        .nav-item.active { 
+            color: var(--gold); 
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .nav-item i { 
+            font-size: 1.2rem; 
+            display: block; 
+            margin-bottom: 4px; 
+        }
+
+        .page { 
+            display: none; 
+            padding: 20px; 
+            animation: fadeIn 0.3s ease; 
+        }
+        
+        .page.active { 
+            display: block; 
+        }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(5px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        .mobile-card { 
+            background: var(--titanium); 
+            border-radius: 20px; 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            border: 0.5px solid #333; 
+            transition: transform 0.2s;
+        }
+        
+        .btn-afa { 
+            background: var(--gold-gradient); 
+            color: #000; 
+            border: none; 
+            border-radius: 12px; 
+            padding: 12px; 
+            width: 100%; 
+            font-weight: bold; 
+            transition: opacity 0.2s;
+        }
+        
+        .btn-afa:active { 
+            transform: scale(0.97); 
+            opacity: 0.9;
+        }
+        
+        .btn-outline-afa { 
+            background: transparent; 
+            border: 1px solid var(--gold); 
+            color: var(--gold); 
+            border-radius: 12px; 
+            padding: 8px; 
+            width: 100%; 
+            font-weight: bold; 
+            transition: all 0.2s;
+        }
+        
+        .btn-outline-afa:active {
+            background: var(--gold);
+            color: #000;
+        }
+        
+        .product-img { 
+            width: 100%; 
+            height: 140px; 
+            background: #222; 
+            border-radius: 12px; 
+            margin-bottom: 10px; 
+            border: 1px solid #333; 
+            overflow: hidden; 
+            position: relative;
+        }
+        
+        .product-img img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.3s; 
+        }
+        
+        .product-img img:hover { 
+            transform: scale(1.05); 
+        }
+        
+        .form-control, .form-select { 
+            background: #222; 
+            border: 1px solid #333; 
+            color: #fff; 
+            border-radius: 10px; 
+            padding: 12px;
+        }
+        
+        .form-control:focus, .form-select:focus { 
+            background: #2a2a2a; 
+            border-color: var(--gold); 
+            color: #fff; 
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25); 
+        }
+        
+        .form-control::placeholder { 
+            color: #aaa; 
+            opacity: 1; 
+        }
+
+        /* Struk Design */
+        #receipt-box { 
+            background: #fff; 
+            color: #000; 
+            padding: 20px; 
+            font-family: 'Courier New', monospace; 
+            display: none; 
+            max-width: 300px; 
+            margin: auto; 
+            border-radius: 8px;
+        }
+        
+        @media print { 
+            body * { visibility: hidden; } 
+            #receipt-box, #receipt-box * { visibility: visible; } 
+            #receipt-box { display: block !important; position: absolute; left: 0; top: 0; width: 100%; } 
+        }
+        
+        /* Badges */
+        .stock-badge { 
+            background: #dc3545; 
+            color: white; 
+            padding: 4px 8px; 
+            border-radius: 20px; 
+            font-size: 10px; 
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .badge-gold { 
+            background: var(--gold); 
+            color: #000; 
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Modal Styling */
+        .modal-content { 
+            background: #1C1C1E; 
+            color: #fff; 
+            border: 1px solid #333; 
+            border-radius: 24px;
+        }
+        
+        .btn-close { 
+            filter: invert(1); 
+        }
+        
+        /* Product Card */
+        .product-card { 
+            transition: transform 0.2s, box-shadow 0.2s; 
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); 
+        }
+        
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            z-index: 3000;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        
+        @keyframes slideUp {
+            from { bottom: 50px; opacity: 0; }
+            to { bottom: 100px; opacity: 1; }
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- App Bar -->
+    <div class="app-bar">
+        <div class="d-flex align-items-center">
+            <span class="fw-bold fs-5" style="color: var(--gold)">AFA STORE</span>
+            <span class="badge bg-secondary ms-2" style="font-size: 10px;">Way Halim</span>
+        </div>
+        <div id="userBtn" onclick="toggleAuth()" style="font-size: 0.8rem; cursor: pointer;" class="d-flex align-items-center">
+            <i class="fas fa-user-circle me-1" style="font-size: 1.2rem;"></i> 
+            <span id="userLabel">Login</span>
+        </div>
+    </div>
+
+    <!-- Pages -->
+    <div id="page-home" class="page active">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold m-0">🔥 Katalog Ready</h5>
+            <span class="badge-gold" id="total-products">8 Produk</span>
+        </div>
+        <div class="row g-3" id="grid-products"></div>
+    </div>
+
+    <div id="page-kredit" class="page">
+        <h5 class="fw-bold mb-3">💰 Kredit/Cicilan</h5>
+        <div class="mobile-card">
+            <label class="small text-secondary mb-2">Pilih iPhone</label>
+            <select id="calc-unit" class="form-select mb-3" onchange="runCalc()">
+                <option value="0">-- Pilih iPhone --</option>
+            </select>
+            
+            <label class="small text-secondary mb-2">Tenor</label>
+            <select id="calc-tenor" class="form-select mb-4" onchange="runCalc()">
+                <option value="6">6 Bulan</option>
+                <option value="12">12 Bulan</option>
+                <option value="24">24 Bulan</option>
+            </select>
+            
+            <div class="p-3 bg-black rounded-3 mb-3">
+                <div class="d-flex justify-content-between small mb-2">
+                    <span>ShopeePayLater</span>
+                    <b id="res-shopee" class="text-warning">Rp 0</b>
+                </div>
+                <div class="d-flex justify-content-between small">
+                    <span>Kredivo/Akulaku</span>
+                    <b id="res-kredivo" class="text-warning">Rp 0</b>
+                </div>
+            </div>
+            
+            <div class="d-grid gap-2">
+                <button class="btn-afa" onclick="waKredit()">
+                    <i class="fab fa-whatsapp me-2"></i>Tanya Cicilan via WA
+                </button>
+                <button class="btn-outline-afa" onclick="waAdmin('kredit')">
+                    <i class="fas fa-headset me-2"></i>Hubungi Admin
+                </button>
+            </div>
+        </div>
+        
+        <!-- Info Kredit -->
+        <div class="mobile-card mt-3">
+            <h6 class="mb-2">📌 Syarat Kredit</h6>
+            <ul class="small text-secondary" style="padding-left: 20px;">
+                <li>KTP & KK</li>
+                <li>DP mulai 20%</li>
+                <li>Tenor 6-24 bulan</li>
+                <li>Bunga mulai 2.5%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page-struk" class="page">
+        <h5 class="fw-bold mb-3">🧾 Riwayat Belanja</h5>
+        <div id="list-orders" class="mb-3"></div>
+        <button class="btn-outline-afa" onclick="waAdmin('order')">
+            <i class="fab fa-whatsapp me-2"></i>Hubungi Admin
+        </button>
+    </div>
+
+    <div id="page-admin" class="page">
+        <h5 class="fw-bold text-danger mb-3">⚙️ Panel Admin</h5>
+        
+        <div class="mobile-card">
+            <h6 class="mb-3">➕ Tambah Produk Baru</h6>
+            <input type="text" id="adm-name" class="form-control mb-2" placeholder="Nama HP (contoh: iPhone 14 Pro)">
+            <input type="number" id="adm-price" class="form-control mb-2" placeholder="Harga (contoh: 12000000)">
+            <input type="number" id="adm-stock" class="form-control mb-2" placeholder="Stok (contoh: 5)" value="1">
+            <input type="text" id="adm-image" class="form-control mb-2" placeholder="URL Gambar (opsional)">
+            <select id="adm-badge" class="form-select mb-3">
+                <option value="Best Seller">Best Seller</option>
+                <option value="Limited">Limited</option>
+                <option value="New">New</option>
+                <option value="BH 100%">BH 100%</option>
+                <option value="Promo">Promo</option>
+            </select>
+            <button class="btn-afa" onclick="pushProduct()">
+                <i class="fas fa-plus me-2"></i>TAMBAH PRODUK
+            </button>
+        </div>
+        
+        <div class="mobile-card">
+            <h6 class="mb-3">📋 Daftar Produk</h6>
+            <div id="list-admin-prod" style="max-height: 300px; overflow-y: auto;"></div>
+        </div>
+        
+        <div class="mobile-card">
+            <h6 class="mb-3">📊 Database Info</h6>
+            <div class="d-flex justify-content-between small mb-2">
+                <span>Total Produk:</span>
+                <span class="badge-gold" id="db-prod-count">0</span>
+            </div>
+            <div class="d-flex justify-content-between small mb-2">
+                <span>Total Orders:</span>
+                <span class="badge-gold" id="db-order-count">0</span>
+            </div>
+            <div class="d-flex justify-content-between small mb-3">
+                <span>Total User:</span>
+                <span class="badge-gold" id="db-user-count">0</span>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn-afa w-50" onclick="exportDB()">
+                    <i class="fas fa-download me-2"></i>Export
+                </button>
+                <button class="btn-outline-afa w-50" onclick="resetDB()">
+                    <i class="fas fa-trash me-2"></i>Reset
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalAuth" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 text-center">
+                <h5 class="fw-bold mb-4" style="color: var(--gold)">🔐 Login Pembeli</h5>
+                <input type="text" id="auth-name" class="form-control mb-3" placeholder="Nama Lengkap">
+                <input type="number" id="auth-wa" class="form-control mb-4" placeholder="No WhatsApp (contoh: 62812...)">
+                <button class="btn-afa mb-2" onclick="doLogin()">
+                    <i class="fas fa-sign-in-alt me-2"></i>MASUK
+                </button>
+                <small class="text-secondary">Data tersimpan aman di perangkat kamu</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalProduct" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+                <h5 class="fw-bold mb-3" style="color: var(--gold)">📱 Detail Produk</h5>
+                <div id="modal-product-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Template -->
+    <div id="receipt-box">
+        <center>
+            <b>AFA STORE</b><br>
+            <small>Way Halim, Bandar Lampung</small><br>
+            <small>📞 0852-1110-1223</small>
+        </center>
+        <hr style="border: 1px dashed #000">
+        <div style="font-size: 12px;">
+            ID: <span id="r-id"></span><br>
+            CUST: <span id="r-user"></span><br>
+            WA: <span id="r-wa"></span><br>
+            TGL: <span id="r-date"></span>
+        </div>
+        <hr style="border: 1px dashed #000">
+        <div style="display:flex; justify-content:space-between">
+            <span id="r-item"></span> 
+            <b id="r-total"></b>
+        </div>
+        <hr style="border: 1px dashed #000">
+        <center>
+            <small>Terima Kasih</small><br>
+            <small style="font-size: 10px;">Barang yang sudah dibeli tidak dapat dikembalikan</small>
+        </center>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <button class="nav-item active" onclick="nav('page-home', this)">
+            <i class="fas fa-home"></i>Home
+        </button>
+        <button class="nav-item" onclick="nav('page-kredit', this)">
+            <i class="fas fa-calculator"></i>Cicilan
+        </button>
+        <button class="nav-item" onclick="nav('page-struk', this)">
+            <i class="fas fa-receipt"></i>Struk
+        </button>
+        <button class="nav-item" onclick="adminAccess(this)">
+            <i class="fas fa-user-shield"></i>Admin
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ==================== KONFIGURASI ====================
+        const APP_VERSION = "2.0.0";
+        const STORE_NAME = "AFA STORE";
+        const STORE_PHONE = "6285211101223";
+        const STORE_ADDRESS = "Way Halim, Bandar Lampung";
+        
+        // Fallback image (SVG iPhone)
+        const FALLBACK_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23222'/%3E%3Crect x='40' y='20' width='120' height='160' rx='20' fill='%23333'/%3E%3Ccircle cx='100' cy='60' r='10' fill='%23D4AF37'/%3E%3Crect x='70' y='90' width='60' height='10' rx='5' fill='%23555'/%3E%3Crect x='70' y='110' width='60' height='10' rx='5' fill='%23555'/%3E%3Crect x='70' y='130' width='60' height='10' rx='5' fill='%23555'/%3E%3Ccircle cx='100' cy='160' r='15' fill='%23333' stroke='%23D4AF37' stroke-width='2'/%3E%3C/svg%3E";
+
+        // ==================== DATABASE PRODUK DENGAN GAMBAR ONLINE ====================
+        const DEFAULT_PRODUCTS = [
+            { 
+                id: 1, 
+                name: "iPhone 16 Pro Max", 
+                price: 18500000, 
+                stock: 5, 
+                badge: "Best Seller", 
+                img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop",
+                desc: "Chip A17 Pro · Titanium design · Kamera 48MP · USB-C 3.0"
+            },
+            { 
+                id: 2, 
+                name: "iPhone 15 Pro", 
+                price: 16500000, 
+                stock: 3, 
+                badge: "New", 
+                img: "https://images.pexels.com/photos/17721829/pexels-photo-17721829.jpeg?w=400&auto=compress",
+                desc: "Chip A16 Bionic · Dynamic Island · USB-C · Action Button"
+            },
+            { 
+                id: 3, 
+                name: "iPhone 15", 
+                price: 12500000, 
+                stock: 4, 
+                badge: "New", 
+                img: "https://images.pexels.com/photos/17668426/pexels-photo-17668426.jpeg?w=400&auto=compress",
+                desc: "Chip A16 Bionic · Dynamic Island · Kamera 48MP"
+            },
+            { 
+                id: 4, 
+                name: "iPhone 14 Pro Max", 
+                price: 15500000, 
+                stock: 2, 
+                badge: "Limited", 
+                img: "https://images.pexels.com/photos/16944473/pexels-photo-16944473.jpeg?w=400&auto=compress",
+                desc: "Chip A16 Bionic · Always-On Display · Dynamic Island"
+            },
+            { 
+                id: 5, 
+                name: "iPhone 14 Pro", 
+                price: 13500000, 
+                stock: 4, 
+                badge: "Best Seller", 
+                img: "https://images.pexels.com/photos/17483657/pexels-photo-17483657.jpeg?w=400&auto=compress",
+                desc: "Chip A16 Bionic · Kamera 48MP · Dynamic Island"
+            },
+            { 
+                id: 6, 
+                name: "iPhone 13 Pro Max", 
+                price: 11500000, 
+                stock: 6, 
+                badge: "BH 100%", 
+                img: "https://images.pexels.com/photos/16817597/pexels-photo-16817597.jpeg?w=400&auto=compress",
+                desc: "Chip A15 Bionic · ProMotion 120Hz · Baterai Awet"
+            },
+            { 
+                id: 7, 
+                name: "iPhone 13", 
+                price: 7200000, 
+                stock: 8, 
+                badge: "Best Seller", 
+                img: "https://images.pexels.com/photos/16696500/pexels-photo-16696500.jpeg?w=400&auto=compress",
+                desc: "Chip A15 Bionic · Dual Camera · 5G"
+            },
+            { 
+                id: 8, 
+                name: "iPhone 12", 
+                price: 6200000, 
+                stock: 7, 
+                badge: "Budget", 
+                img: "https://images.pexels.com/photos/14801620/pexels-photo-14801620.jpeg?w=400&auto=compress",
+                desc: "Chip A14 Bionic · OLED Display · 5G"
+            },
+            { 
+                id: 9, 
+                name: "iPhone 11", 
+                price: 5200000, 
+                stock: 5, 
+                badge: "Best Value", 
+                img: "https://images.pexels.com/photos/14669692/pexels-photo-14669692.jpeg?w=400&auto=compress",
+                desc: "Chip A13 Bionic · Dual Camera · Liquid Retina"
+            },
+            { 
+                id: 10, 
+                name: "iPhone SE 2022", 
+                price: 4200000, 
+                stock: 10, 
+                badge: "Entry Level", 
+                img: "https://images.pexels.com/photos/14669694/pexels-photo-14669694.jpeg?w=400&auto=compress",
+                desc: "Chip A15 Bionic · Touch ID · Compact Design"
+            }
+        ];
+
+        // ==================== INISIALISASI DATABASE ====================
+        let db = JSON.parse(localStorage.getItem('afa_db')) || {
+            products: DEFAULT_PRODUCTS,
+            orders: JSON.parse(localStorage.getItem('afa_orders')) || [],
+            users: JSON.parse(localStorage.getItem('afa_users')) || [],
+            settings: {
+                waNumber: STORE_PHONE,
+                storeName: STORE_NAME,
+                address: STORE_ADDRESS,
+                version: APP_VERSION
+            }
+        };
+        
+        let user = JSON.parse(localStorage.getItem('afa_user')) || null;
+        
+        // Save database function
+        function saveDB() {
+            localStorage.setItem('afa_db', JSON.stringify(db));
+            localStorage.setItem('afa_orders', JSON.stringify(db.orders));
+            localStorage.setItem('afa_users', JSON.stringify(db.users));
+        }
+
+        // ==================== FALLBACK IMAGE HANDLER ====================
+        function handleImageError(imgElement) {
+            if(imgElement.src !== FALLBACK_IMAGE) {
+                imgElement.src = FALLBACK_IMAGE;
+                imgElement.onerror = null; // Prevent infinite loop
+            }
+        }
+
+        // ==================== TOAST NOTIFICATION ====================
+        function showToast(message, duration = 2000) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, duration);
+        }
+
+        // ==================== WHATSAPP MESSAGE FEATURE ====================
+        function waAdmin(context = 'general') {
+            if(!user) { toggleAuth(); return; }
+            
+            let message = "";
+            let phone = db.settings.waNumber;
+            
+            if(context === 'kredit') {
+                let unitSelect = document.getElementById('calc-unit');
+                let unit = unitSelect.selectedOptions[0]?.text || "iPhone";
+                let price = unitSelect.value;
+                let tenor = document.getElementById('calc-tenor').value;
+                let shopee = document.getElementById('res-shopee').innerText;
+                let kredivo = document.getElementById('res-kredivo').innerText;
+                
+                message = `Halo AFA STORE, saya *${user.name}* mau tanya soal kredit/cicilan:\n\n` +
+                         `📱 Unit: ${unit}\n` +
+                         `💰 Harga: Rp ${parseInt(price).toLocaleString()}\n` +
+                         `📅 Tenor: ${tenor} bulan\n` +
+                         `💳 Shopee: ${shopee}/bln\n` +
+                         `💳 Kredivo: ${kredivo}/bln\n\n` +
+                         `Apakah ada promo? Terima kasih.`;
+            } 
+            else if(context === 'order') {
+                let userOrders = db.orders.filter(o => o.wa === user.wa);
+                if(userOrders.length === 0) {
+                    message = `Halo AFA STORE, saya *${user.name}* (${user.wa}) mau nanya-nanya soal produk.`;
+                } else {
+                    let lastOrder = userOrders[userOrders.length - 1];
+                    message = `Halo AFA STORE, saya *${user.name}* (${user.wa}) mau nanya status pesanan:\n` +
+                             `🧾 Invoice: ${lastOrder.inv}\n` +
+                             `📱 Unit: ${lastOrder.unit}\n` +
+                             `📅 Tanggal: ${lastOrder.date}\n\n` +
+                             `Statusnya bagaimana ya?`;
+                }
+            }
+            else {
+                message = `Halo AFA STORE, saya *${user ? user.name : 'calon pembeli'}* mau nanya-nanya.`;
+            }
+            
+            let waURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(waURL);
+        }
+
+        function waKredit() {
+            waAdmin('kredit');
+        }
+
+        // ==================== NAVIGATION ====================
+        function nav(id, el) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            el.classList.add('active');
+            render();
+        }
+
+        function toggleAuth() {
+            if(user) { 
+                if(confirm("Logout dari akun ini?")) { 
+                    localStorage.removeItem('afa_user'); 
+                    user = null;
+                    document.getElementById('userLabel').innerText = "Login";
+                    showToast("Berhasil logout");
+                    render();
+                }
+            } else { 
+                new bootstrap.Modal(document.getElementById('modalAuth')).show(); 
+            }
+        }
+
+        function doLogin() {
+            const n = document.getElementById('auth-name').value.trim();
+            const w = document.getElementById('auth-wa').value.trim();
+            
+            if(n && w && w.length >= 10) {
+                // Validasi nomor WA
+                if(!/^\d+$/.test(w)) {
+                    alert("Nomor WA harus angka semua!");
+                    return;
+                }
+                
+                user = { name: n, wa: w };
+                localStorage.setItem('afa_user', JSON.stringify(user));
+                
+                // Add to users database if not exists
+                if(!db.users.find(u => u.wa === w)) {
+                    db.users.push({ 
+                        name: n, 
+                        wa: w, 
+                        joinDate: new Date().toLocaleDateString('id-ID'),
+                        lastLogin: new Date().toISOString()
+                    });
+                    saveDB();
+                }
+                
+                bootstrap.Modal.getInstance(document.getElementById('modalAuth')).hide();
+                
+                // Clear form
+                document.getElementById('auth-name').value = '';
+                document.getElementById('auth-wa').value = '';
+                
+                showToast(`Selamat datang ${n}!`);
+                render();
+            } else {
+                alert("Isi semua field dengan benar, nomor minimal 10 digit");
+            }
+        }
+
+        // ==================== RENDER FUNCTIONS ====================
+        function render() {
+            const grid = document.getElementById('grid-products');
+            const sel = document.getElementById('calc-unit');
+            const ord = document.getElementById('list-orders');
+            const adm = document.getElementById('list-admin-prod');
+            const totalProducts = document.getElementById('total-products');
+
+            // Update user label
+            if(user) {
+                document.getElementById('userLabel').innerText = user.name.split(' ')[0];
+            } else {
+                document.getElementById('userLabel').innerText = "Login";
+            }
+
+            // Update total products
+            totalProducts.innerText = db.products.length + " Produk";
+
+            // Render products grid
+            grid.innerHTML = '';
+            sel.innerHTML = '<option value="0">-- Pilih iPhone --</option>';
+            
+            db.products.forEach((p) => {
+                // Product card
+                grid.innerHTML += `
+                    <div class="col-6">
+                        <div class="mobile-card text-center product-card">
+                            <div class="position-relative">
+                                ${p.stock < 3 ? '<span class="stock-badge position-absolute top-0 end-0 m-2">Sisa ' + p.stock + '</span>' : ''}
+                                <div class="product-img">
+                                    <img src="${p.img}" alt="${p.name}" onerror="handleImageError(this)" loading="lazy">
+                                </div>
+                            </div>
+                            <h6 class="small fw-bold mb-1">${p.name}</h6>
+                            <p class="text-warning small mb-2">Rp ${(p.price/1000000).toFixed(1)}jt</p>
+                            ${p.badge ? '<span class="badge-gold mb-2 d-inline-block">' + p.badge + '</span>' : ''}
+                            <div class="d-flex gap-2 mt-2">
+                                <button class="btn btn-sm btn-outline-secondary w-50 rounded-pill" onclick="showProductDetail(${p.id})">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-warning w-50 rounded-pill" onclick="buy(${p.id})" ${p.stock < 1 ? 'disabled' : ''}>
+                                    ${p.stock < 1 ? 'Habis' : 'Beli'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>`;
+                
+                // Calculator options
+                sel.innerHTML += `<option value="${p.price}" ${p.stock < 1 ? 'disabled' : ''}>${p.name} ${p.stock < 1 ? '(Habis)' : ''}</option>`;
+            });
+
+            // Admin product list
+            adm.innerHTML = '';
+            db.products.forEach((p) => {
+                adm.innerHTML += `
+                    <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                        <div class="d-flex align-items-center">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; overflow: hidden; margin-right: 10px; background: #222;">
+                                <img src="${p.img}" style="width: 100%; height: 100%; object-fit: cover;" onerror="handleImageError(this)" loading="lazy">
+                            </div>
+                            <div>
+                                <span class="fw-bold small">${p.name}</span><br>
+                                <small class="text-secondary">Rp ${p.price.toLocaleString()} | Stok: ${p.stock}</small>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-edit text-warning me-2" onclick="editProduct(${p.id})" style="cursor: pointer;"></i>
+                            <i class="fas fa-trash text-danger" onclick="del(${p.id})" style="cursor: pointer;"></i>
+                        </div>
+                    </div>`;
+            });
+
+            // Orders list
+            ord.innerHTML = '';
+            if(user) {
+                let userOrders = db.orders.filter(o => o.wa === user.wa);
+                if(userOrders.length > 0) {
+                    userOrders.slice().reverse().forEach((o) => {
+                        ord.innerHTML += `
+                        <div class="mobile-card">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div><b class="small">${o.unit}</b></div>
+                                <span class="badge ${o.status === 'Selesai' ? 'bg-success' : 'bg-warning text-dark'}">${o.status || 'Diproses'}</span>
+                            </div>
+                            <div class="d-flex justify-content-between small text-secondary mb-2">
+                                <span>${o.inv}</span>
+                                <span>${o.date}</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-warning w-50 rounded-pill" onclick="printStruk('${o.inv}')">
+                                    <i class="fas fa-print me-1"></i>Struk
+                                </button>
+                                <button class="btn btn-sm btn-outline-light w-50 rounded-pill" onclick="waOrderStatus('${o.inv}')">
+                                    <i class="fab fa-whatsapp me-1"></i>Chat
+                                </button>
+                            </div>
+                        </div>`;
+                    });
+                } else {
+                    ord.innerHTML = "<div class='text-center p-5'><i class='fas fa-shopping-bag fa-4x mb-3 text-secondary'></i><p class='text-secondary'>Belum ada pesanan</p><button class='btn-afa mt-3' onclick='nav(\"page-home\", document.querySelectorAll(\".nav-item\")[0])'>Belanja Yuk!</button></div>";
+                }
+            } else {
+                ord.innerHTML = "<div class='text-center p-5'><i class='fas fa-user-lock fa-4x mb-3 text-secondary'></i><p class='text-secondary'>Login dulu buat lihat riwayat</p></div>";
+            }
+
+            // Database info di admin panel
+            if(document.getElementById('page-admin').classList.contains('active')) {
+                document.getElementById('db-prod-count').innerText = db.products.length;
+                document.getElementById('db-order-count').innerText = db.orders.length;
+                document.getElementById('db-user-count').innerText = db.users.length;
+            }
+        }
+
+        // ==================== PRODUCT DETAIL MODAL ====================
+        function showProductDetail(id) {
+            let product = db.products.find(p => p.id === id);
+            if(!product) return;
+            
+            let modal = new bootstrap.Modal(document.getElementById('modalProduct'));
+            document.getElementById('modal-product-content').innerHTML = `
+                <div style="width: 100%; height: 250px; border-radius: 16px; overflow: hidden; margin-bottom: 15px; background: #222;">
+                    <img src="${product.img}" class="w-100 h-100" style="object-fit: cover;" onerror="handleImageError(this)" loading="lazy">
+                </div>
+                <h5 class="fw-bold">${product.name}</h5>
+                <p class="text-warning fw-bold fs-5 mb-2">Rp ${product.price.toLocaleString()}</p>
+                <p class="small text-secondary mb-3">${product.desc || 'Deskripsi tidak tersedia'}</p>
+                <div class="d-flex justify-content-between mb-4">
+                    <span class="badge bg-secondary px-3 py-2">Stok: ${product.stock}</span>
+                    <span class="badge-gold px-3 py-2">${product.badge}</span>
+                </div>
+                <button class="btn-afa py-3" onclick="buy(${product.id})" ${product.stock < 1 ? 'disabled' : ''}>
+                    ${product.stock < 1 ? 'Stok Habis' : 'Beli Sekarang'}
+                </button>
+            `;
+            modal.show();
+        }
+
+        // ==================== BUY FEATURE ====================
+        function buy(productId) {
+            if(!user) { toggleAuth(); return; }
+            
+            let product = db.products.find(p => p.id === productId);
+            if(!product) return;
+            
+            if(product.stock < 1) {
+                alert("Maaf, stok habis!");
+                return;
+            }
+            
+            if(confirm(`Beli ${product.name}?\nHarga: Rp ${product.price.toLocaleString()}`)) {
+                // Kurangi stok
+                product.stock -= 1;
+                
+                // Buat order
+                let order = {
+                    inv: "AFA-" + Date.now().toString().slice(-8),
+                    unit: product.name,
+                    price: product.price,
+                    wa: user.wa,
+                    buyer: user.name,
+                    date: new Date().toLocaleDateString('id-ID'),
+                    time: new Date().toLocaleTimeString('id-ID'),
+                    status: "Menunggu Pembayaran"
+                };
+                
+                db.orders.push(order);
+                saveDB();
+                
+                showToast("Berhasil! Cek riwayat belanja");
+                
+                // Tawarin langsung chat admin
+                if(confirm("Mau langsung konfirmasi ke admin via WhatsApp?")) {
+                    let message = `Halo AFA STORE, saya *${user.name}* baru saja order:\n` +
+                                 `🧾 Invoice: ${order.inv}\n` +
+                                 `📱 Unit: ${order.unit}\n` +
+                                 `💰 Total: Rp ${order.price.toLocaleString()}\n\n` +
+                                 `Mohon info cara pembayaran. Terima kasih.`;
+                    window.open(`https://wa.me/${db.settings.waNumber}?text=${encodeURIComponent(message)}`);
+                }
+                
+                // Close modal if open
+                let modal = bootstrap.Modal.getInstance(document.getElementById('modalProduct'));
+                if(modal) modal.hide();
+                
+                nav('page-struk', document.querySelectorAll('.nav-item')[2]);
+            }
+        }
+
+        // ==================== KREDIT CALCULATOR ====================
+        function runCalc() {
+            const p = parseInt(document.getElementById('calc-unit').value);
+            const t = parseInt(document.getElementById('calc-tenor').value);
+            
+            if(p > 0) {
+                let shopeePerBulan = Math.round((p + (p*0.03*t))/t);
+                let kredivoPerBulan = Math.round((p + (p*0.025*t))/t);
+                
+                document.getElementById('res-shopee').innerText = "Rp " + shopeePerBulan.toLocaleString();
+                document.getElementById('res-kredivo').innerText = "Rp " + kredivoPerBulan.toLocaleString();
+            } else {
+                document.getElementById('res-shopee').innerText = "Rp 0";
+                document.getElementById('res-kredivo').innerText = "Rp 0";
+            }
+        }
+
+        // ==================== PRINT STRUK ====================
+        function printStruk(inv) {
+            let order = db.orders.find(o => o.inv === inv);
+            if(!order) return;
+            
+            document.getElementById('r-id').innerText = order.inv;
+            document.getElementById('r-user').innerText = order.buyer;
+            document.getElementById('r-wa').innerText = order.wa;
+            document.getElementById('r-date').innerText = order.date + ' ' + (order.time || '');
+            document.getElementById('r-item').innerText = order.unit;
+            document.getElementById('r-total').innerText = "Rp " + order.price.toLocaleString();
+            
+            window.print();
+        }
+
+        function waOrderStatus(inv) {
+            let order = db.orders.find(o => o.inv === inv);
+            if(!order) return;
+            
+            let message = `Halo AFA STORE, saya *${order.buyer}* mau nanya status pesanan:\n` +
+                         `🧾 Invoice: ${order.inv}\n` +
+                         `📱 Unit: ${order.unit}\n` +
+                         `📅 Tanggal: ${order.date}\n\n` +
+                         `Statusnya sudah sampai mana ya?`;
+            
+            window.open(`https://wa.me/${db.settings.waNumber}?text=${encodeURIComponent(message)}`);
+        }
+
+        // ==================== ADMIN FUNCTIONS ====================
+        function adminAccess(el) {
+            let pass = prompt("Masukkan password admin:");
+            if(pass === "kiss2x") {
+                nav('page-admin', el);
+                render();
+            } else {
+                alert("Password salah!");
+            }
+        }
+
+        function pushProduct() {
+            const name = document.getElementById('adm-name').value.trim();
+            const price = document.getElementById('adm-price').value.trim();
+            const stock = document.getElementById('adm-stock').value || 1;
+            const image = document.getElementById('adm-image').value.trim();
+            const badge = document.getElementById('adm-badge').value;
+            
+            if(name && price) {
+                // Generate new ID
+                let newId = db.products.length > 0 ? Math.max(...db.products.map(p => p.id)) + 1 : 1;
+                
+                // Default image if not provided
+                let imgUrl = image || `https://images.pexels.com/photos/14669694/pexels-photo-14669694.jpeg?w=400&auto=compress`;
+                
+                db.products.push({ 
+                    id: newId,
+                    name: name, 
+                    price: parseInt(price), 
+                    stock: parseInt(stock),
+                    badge: badge,
+                    img: imgUrl,
+                    desc: "Produk terbaru dari AFA STORE"
+                });
+                
+                saveDB();
+                
+                // Clear form
+                document.getElementById('adm-name').value = '';
+                document.getElementById('adm-price').value = '';
+                document.getElementById('adm-stock').value = '1';
+                document.getElementById('adm-image').value = '';
+                
+                render();
+                showToast("Produk berhasil ditambahkan!");
+            } else {
+                alert("Nama dan harga harus diisi!");
+            }
+        }
+
+        function editProduct(id) {
+            let product = db.products.find(p => p.id === id);
+            if(!product) return;
+            
+            let newName = prompt("Edit nama produk:", product.name);
+            if(newName === null) return;
+            
+            let newPrice = prompt("Edit harga (angka):", product.price);
+            if(newPrice === null) return;
+            
+            let newStock = prompt("Edit stok:", product.stock);
+            if(newStock === null) return;
+            
+            let newImage = prompt("Edit URL gambar (opsional):", product.img);
+            if(newImage === null) return;
+            
+            product.name = newName;
+            product.price = parseInt(newPrice);
+            product.stock = parseInt(newStock);
+            if(newImage) product.img = newImage;
+            
+            saveDB();
+            render();
+            showToast("Produk berhasil diedit!");
+        }
+
+        function del(id) {
+            if(confirm("Yakin hapus produk ini?")) {
+                db.products = db.products.filter(p => p.id !== id);
+                saveDB();
+                render();
+                showToast("Produk dihapus");
+            }
+        }
+
+        // ==================== DATABASE MANAGEMENT ====================
+        function exportDB() {
+            let dataStr = JSON.stringify(db, null, 2);
+            let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            let exportFileDefaultName = `afa_db_backup_${new Date().toISOString().slice(0,10)}.json`;
+            
+            let linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+            
+            showToast("Database diekspor");
+        }
+
+        function resetDB() {
+            if(confirm("⚠️ PERINGATAN! Ini akan mereset semua data. Lanjutkan?")) {
+                let confirm2 = prompt("Ketik 'RESET' untuk konfirmasi:");
+                if(confirm2 === 'RESET') {
+                    db = {
+                        products: DEFAULT_PRODUCTS,
+                        orders: [],
+                        users: [],
+                        settings: {
+                            waNumber: STORE_PHONE,
+                            storeName: STORE_NAME,
+                            address: STORE_ADDRESS,
+                            version: APP_VERSION
+                        }
+                    };
+                    
+                    user = null;
+                    localStorage.removeItem('afa_user');
+                    saveDB();
+                    render();
+                    showToast("Database direset ke default");
+                }
+            }
+        }
+
+        // ==================== SERVICE WORKER (PWA READY) ====================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // Unregister previous service workers
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                        registration.unregister();
+                    }
+                });
+            });
+        }
+
+        // ==================== INITIALIZATION ====================
+        window.onload = function() {
+            // Migrate old data if exists
+            let oldOrders = localStorage.getItem('afa_orders');
+            if(oldOrders && db.orders.length === 0) {
+                try {
+                    db.orders = JSON.parse(oldOrders);
+                } catch(e) {
+                    console.log('Migration failed');
+                }
+            }
+            
+            render();
+            runCalc();
+            
+            // Show welcome message
+            console.log(`AFA STORE v${APP_VERSION} ready!`);
+        };
+    </script>
+</body>
+</html>
